@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Gradhub</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'cv', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <script src="https://use.fontawesome.com/8b1871ab61.js"></script>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+	<head>
+		<title>Gradhub</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+		<%= stylesheet_link_tag 'cv', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<script src="https://use.fontawesome.com/8b1871ab61.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-1 vertical" id="branding" style="width: 75px; flex: 0 0 12.499%;max-width: 75px;">
+					<h3>Gradhub.io</h3>
+				</div>
+				<!--branding end-->
+				<div class="col-sm-2" id="leftbar">
+					<div id="person-id">
+						<%= image_tag "jason.jpg", id: "photo" %>
+						<h4 id="name">Jason Wallaby</h4>
+						<h6 id="title">PhD Candidate, Psychology</h6>
+						<p id="location">Boston, MA</p>
+						<div id="social"><i class="fa fa-linkedin"></i><i class="fa fa-twitter"></i><i class="fa fa-"></i></div>
+					</div>
+					<!--person-id end-->
+					<div id="menu">
+						<a href=#about class="item active">About<i class="fa fa-user right"></i></a>
+						<a href=#research class="item">Research<i class="fa fa-flask right"></i></a>
+						<a href=#experience class="item">Experience<i class="fa fa-briefcase right"></i></a>
+						<a href=#awards class="item">Awards<i class="fa fa-trophy right"></i></a>
+						<a href=#publications class="item">Publications<i class="fa fa-book right"></i></a>
+						<a href=#cv class="item">Download CV<i class="fa fa-download right"></i></a>
+					</div>
+					<!--menu-->
+				</div>
+				<%= yield %>
+			</div>
+			<!--leftbar end-->
+		</div>
+	</body>
 </html>
